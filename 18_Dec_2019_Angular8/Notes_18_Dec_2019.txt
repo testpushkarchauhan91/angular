@@ -1,0 +1,700 @@
+Angular Forms and Service
+1. ng new angular-forms-service
+
+Angular Forms
+==========================================================================================================================================================================================================
+-- Angular provided 2 types of forms:
+1. Template Driven Form
+2. Model Drive Form or Reactive Form
+==========================================================================================================================================================================================================
+1.Template Drive Form
+-- The flow of the form is view to component
+-- View ------> Component
+-- This type of form is simple to develop
+-- Easy for people who work in html/html5
+-- In this form we have to create the "form reference" using "ng-Form" attribute which is a part of FormsModule and bind the property with ngModel attribute.
+-- ngForm and ngModel both are a part of FormsModule
+-- This is used for simple applications and not used for complex applications
+-- Create a complete form reference
+
+
+-- import FormsModule
+-- use ngModel
+
+Login Page using 
+
+Ways to pass values from View to Component
+1. Using Template Reference
+2. Using Property Binding : ngModel 2 way binding
+3. Using Forms
+
+1. To run the application (ng serve)
+2. To create the component (ng g c templatedrivenform)
+==========================================================================================================================================================================================================
+Create a new Project Using "ng new angular-forms-service"
+==========================================================================================================================================================================================================
+C:\Users\training>cd C:\Users\training\Visual_Studio_Code_Workspace\AngularDemo
+
+C:\Users\training\Visual_Studio_Code_Workspace\AngularDemo>ng new angular-forms-
+service
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? CSS
+CREATE angular-forms-service/angular.json (3713 bytes)
+CREATE angular-forms-service/package.json (1307 bytes)
+CREATE angular-forms-service/README.md (1037 bytes)
+CREATE angular-forms-service/tsconfig.json (543 bytes)
+CREATE angular-forms-service/tslint.json (1953 bytes)
+CREATE angular-forms-service/.editorconfig (246 bytes)
+CREATE angular-forms-service/.gitignore (631 bytes)
+CREATE angular-forms-service/browserslist (429 bytes)
+CREATE angular-forms-service/karma.conf.js (1033 bytes)
+CREATE angular-forms-service/tsconfig.app.json (270 bytes)
+CREATE angular-forms-service/tsconfig.spec.json (270 bytes)
+CREATE angular-forms-service/src/favicon.ico (948 bytes)
+CREATE angular-forms-service/src/index.html (305 bytes)
+CREATE angular-forms-service/src/main.ts (372 bytes)
+CREATE angular-forms-service/src/polyfills.ts (2838 bytes)
+CREATE angular-forms-service/src/styles.css (80 bytes)
+CREATE angular-forms-service/src/test.ts (642 bytes)
+CREATE angular-forms-service/src/assets/.gitkeep (0 bytes)
+CREATE angular-forms-service/src/environments/environment.prod.ts (51 bytes)
+CREATE angular-forms-service/src/environments/environment.ts (662 bytes)
+CREATE angular-forms-service/src/app/app-routing.module.ts (246 bytes)
+CREATE angular-forms-service/src/app/app.module.ts (393 bytes)
+CREATE angular-forms-service/src/app/app.component.html (25530 bytes)
+CREATE angular-forms-service/src/app/app.component.spec.ts (1143 bytes)
+CREATE angular-forms-service/src/app/app.component.ts (225 bytes)
+CREATE angular-forms-service/src/app/app.component.css (0 bytes)
+CREATE angular-forms-service/e2e/protractor.conf.js (808 bytes)
+CREATE angular-forms-service/e2e/tsconfig.json (214 bytes)
+CREATE angular-forms-service/e2e/src/app.e2e-spec.ts (654 bytes)
+CREATE angular-forms-service/e2e/src/app.po.ts (262 bytes)
+npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not r
+ecommended for usage due to the number of issues. Please, upgrade your dependenc
+ies to the actual version of core-js@3.
+
+> core-js@2.6.11 postinstall C:\Users\training\Visual_Studio_Code_Workspace\Angu
+larDemo\angular-forms-service\node_modules\babel-runtime\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+
+> core-js@3.2.1 postinstall C:\Users\training\Visual_Studio_Code_Workspace\Angul
+arDemo\angular-forms-service\node_modules\core-js
+> node scripts/postinstall || echo "ignore"
+
+
+> core-js-pure@3.5.0 postinstall C:\Users\training\Visual_Studio_Code_Workspace\
+AngularDemo\angular-forms-service\node_modules\core-js-pure
+> node -e "try{require('./postinstall')}catch(e){}"
+
+
+> core-js@2.6.11 postinstall C:\Users\training\Visual_Studio_Code_Workspace\Angu
+larDemo\angular-forms-service\node_modules\karma\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+
+> @angular/cli@8.3.20 postinstall C:\Users\training\Visual_Studio_Code_Workspace
+\AngularDemo\angular-forms-service\node_modules\@angular\cli
+> node ./bin/postinstall/script.js
+
+npm WARN axobject-query@2.1.1 requires a peer of eslint@^5 || ^6 but none is ins
+talled. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\we
+bpack-dev-server\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
+1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"
+})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\wa
+tchpack\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
+1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"
+})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\ka
+rma\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
+1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"
+})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\@a
+ngular\compiler-cli\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
+1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"
+})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules\fse
+vents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
+2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"}
+)
+
+added 1195 packages from 1052 contributors and audited 18944 packages in 275.305
+s
+found 3 moderate severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details
+'git' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\training\Visual_Studio_Code_Workspace\AngularDemo>
+
+==========================================================================================================================================================================================================
+ng serve -o (this will open the project in a default browser you need not manually open it)
+==========================================================================================================================================================================================================
+
+1. Open the project "angular-forms-service"
+2. Remove all content of "app.component.html" page
+3. submit event gets fired before action
+3. this submit will call JS function
+ if(submit) returns true we will get to new page
+ if(submit) returns false we will get to same page
+
+view ----> pass value to component --> angular service -> call restful service
+
+4. app.modules.ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    TemplatedrivenformComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+5. Pass the value templatedrivenform.component.ts
+checkUser(loginRef){
+  console.log(loginRef);
+}
+
+If action is not there form is refershed
+action is gets disabled in angular
+
+==========================================================================================================================================================================================================
+
+2. Model Driven Form (comonent to view) or Reactive Form
+-- The flow is from component to view
+-- component ----> view
+-- Angular provided predefined API (FormGroup and FormControl) which will help to bind the form and form property from component to view. 
+-- This type of form is good for people from TypeScript background.
+-- This is good for complex form.
+
+If we want to create a text field
+TextField must be part of form tag
+TextField, Submit Button,Text Field, Radio Button are called "FormControl"
+Acc to Model Driven Approach we cannt crea e a form control without form group
+Login Page --> Form Grou
+	TextField --> Form Control
+	Password  --> Form Control
+		Address  --> Form Group
+			TextField --> Form Control
+			TextField --> Form Control
+			TextField --> Form Control
+
+We require event to get the value
+
+1. Import module in app.module.ts using * lines
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 	*********************************************************************
+import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
+import { ModeldrivenformComponent } from './modeldrivenform/modeldrivenform.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    TemplatedrivenformComponent,
+    ModeldrivenformComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule 						*********************************************************************
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+2. Open modeldrivenform.component.ts
+2.1 import { FormGroup, FormControl } from '@angular/forms';
+2.2  loginRef = new FormGroup({
+    userName: new FormControl(),
+    pass: new FormControl()
+  });
+
+3. Open modeldrivenform.component.html or template
+
+==========================================================================================================================================================================================================
+Template Driven Form Validation
+==========================================================================================================================================================================================================
+HTML5
+Old:
+Java Script Validation
+New:
+<input type="text" name="user" required>
+-- More pre defined classes are defined by Angular
+-- Disbale HTML5 validation using "novalidate"
+
+<form #loginRef="ngForm" (submit)="checkUser(loginRef.value)" novalidate>
+Every Controller we can apply 4 property
+1. required
+2. min.length
+3. maxlength
+4. pattern
+
+1. Make submit button disable
+using Required for both fields
+<input type="submit" name="submit" [disabled]="loginRef.invalid"/>			*********************************************************************
+
+<div>
+	<h2>Template Driven Form - Login Page</h2>
+	<!--creating loginRef is a type of ngForm -->
+	<form #loginRef="ngForm" (submit)="checkUser(loginRef.value)" novalidate>	*********************************************************************
+		<table>
+			<tr>
+				<td>
+					<h3><label>UserName:</label></h3>
+				</td>
+				<td>
+					<input type="text" name="user" ngModel required/>	*********************************************************************
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3><label>Password:</label></h3>
+				</td>
+				<td>
+					<input type="password" name="pass" ngModel required/>	*********************************************************************
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<!-- disabled as data binding-->
+					<input type="submit" name="submit" [disabled]="loginRef.invalid"/>	*********************************************************************
+				</td>
+				<td>
+					<input type="reset" name="reset" />
+				</td>
+			</tr>
+		</table>
+	
+	</form>
+		{{msg}}
+</div>
+==========================================================================================================================================================================================================
+<div>
+	<h2>Template Driven Form - Login Page</h2>
+	<!--creating loginRef is a type of ngForm -->
+	<form #loginRef="ngForm" (submit)="checkUser(loginRef.value)" novalidate>		*********************************************************************
+		<table>
+			<tr>
+				<td>
+					<h3><label>UserName:</label></h3>
+				</td>
+				<td>
+					<input type="text" name="user" ngModel required #userRef/>		*********************************************************************
+					{{userRef.className}}
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3><label>Password:</label></h3>
+				</td>
+				<td>
+					<input type="password" name="pass" ngModel required/>		*********************************************************************
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<!-- disabled as data binding-->
+					<input type="submit" name="submit" [disabled]="loginRef.invalid"/>		*********************************************************************
+				</td>
+				<td>
+					<input type="reset" name="reset" />
+				</td>
+			</tr>
+		</table>
+	
+	</form>
+		{{msg}}
+</div>
+
+O/P:
+Every Controller we can apply 4 property
+1. required
+2. min.length
+3. maxlength
+4. pattern
+
+
+6 Evenry Controller has 6 classes inbuild Validation CSS classes
+ng-dirty ng-touched ng-valid
+ng-untouched ng-pristine ng-invalid
+1. ng-touched 	: The field has not been touched yet
+2. ng-untouched : The field has been touched yet
+3. ng-valid	: The field content is valid
+4. ng-invalid   : The field content is not valid
+5. ng-pristine  : The field has not been  modified yet
+6. ng-dirty     : The field has been modified
+==========================================================================================================================================================================================================
+<div>
+	<h2>Template Driven Form - Login Page</h2>
+	<!--creating loginRef is a type of ngForm -->
+	<form #loginRef="ngForm" (submit)="checkUser(loginRef.value)" novalidate>
+		<table>
+			<tr>
+				<td>
+					<h3>
+						<label>UserName:</label>
+					</h3>
+				</td>
+				<td>
+					<input type="text" name="user" ngModel required #userRef="ngModel" minlength="4" />
+					<!-- {{userRef.className}} -->
+					<div *ngIf="userRef.invalid && (userRef.touched || userRef.dirty)">
+						<div *ngIf="userRef.errors.required" style="color:red">Username is required</div>
+						<div *ngIf="userRef.errors.minlength" style="color:red">Username must be 4 characters</div>
+					</div>
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3>
+						<label>Password:</label>
+					</h3>
+				</td>
+				<td>
+					<!-- To pass to component ngModel-->
+					<!-- To do validation #passRef="ngModel"-->
+					<!-- Password must be 3 digits pattern="\d{3}"-->
+					<!-- Password must be 3 alphabets pattern="\d{3}"-->
+					<input type="password" name="pass" ngModel #passRef="ngModel" required pattern="\d{3}"/>
+					<div *ngIf="passRef.invalid && (passRef.touched || passRef.dirty)">
+						<div *ngIf="passRef.errors.required" style="color:red">Password is required</div>
+						<div *ngIf="passRef.errors.pattern" style="color:red">Password must follow the pattern</div>
+					</div>
+					<br>
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<!-- disabled as data binding-->
+					<input type="submit" name="submit" [disabled]="loginRef.invalid" />
+				</td>
+				<td>
+					<input type="reset" name="reset" />
+				</td>
+			</tr>
+		</table>
+	</form>{{msg}}</div>
+==========================================================================================================================================================================================================
+Model Driven Form Validation
+==========================================================================================================================================================================================================
+-- We are using FormControl reference which is a part of component
+==========================================================================================================================================================================================================
+-- new FormControl('',[Validators.required, Validators.Validators.required]
+-- Validators are part of angular form
+==========================================================================================================================================================================================================
+Angular Service (service layer/model)
+-- If we write any business logic in Component it will become local to that component ie.e we can access that code only within that Component Template
+-- In order to achieve separation f concernswe have to use model layer (service)
+-- Every component is connected to a view
+-- loosely coupling
+-- common business logic and use Dependency Injection(IOC and DI) to call objects
+-- Object Creation is done only when @Decorator is there.
+-- common business logic 
+-- Angular supports DI and IOC
+
+Types of Service:
+1. User Defined Service
+1.1 Creating object of service class using new keyword
+1.2 Creating object of service class using DI or dependency Injection
+2. Pre Defined Service or HTTP Service
+
+1. Creating a component
+Problem: Any time component is called it will create service class object using new
+
+Solution: Inversion of Control
+It is a concept or design pattern
+In place of creating the object or any resources explicitly allow to create a container.
+You only pull from a container when you want.
+
+Dependency Injection:
+DI is implementation of injection.
+IOC is a concept/specification and DI is an implementation
+Three types of DI:
+1. Setter Based Dependency Injection
+2. Constructor Based Dependency Injection
+3. Interface Based Dependency Injection
+
+***** Angular supports only Constructor based DI
+
+1. Use @Injectable
+1. Register on Module Level (then every component cn use it, both service class can use it) (Singleton)
+1.1 app.module.ts
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
+import { ModeldrivenformComponent } from './modeldrivenform/modeldrivenform.component';
+import { ServicecomponentComponent } from './servicecomponent/servicecomponent.component';
+import { FakeService } from './fake-service';							*********************************************************************
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    TemplatedrivenformComponent,
+    ModeldrivenformComponent,
+    ServicecomponentComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [FakeService],									*********************************************************************
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+1.2 service-component.component.ts
+
+
+2. Register on Component Level (only for that class)
+Pre Defined Service:
+Angular provided predefined http service which help to call http methods
+get(), put(), post() and delete()
+
+Get(): GET the Resource
+Post(): Create the Resource
+Put(): Update the Resource
+Delete(): Delete the Resource
+Angular provided HTTPClient pre-defined API to call htt methods.
+So in Service Layerwe have t do is Di for HTTpCLient,.
+HttpClientModule is a part of HTTPModule we have to import in app.module.ts
+
+1. import in app.module.ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
+import { ModeldrivenformComponent } from './modeldrivenform/modeldrivenform.component';
+import { ServicecomponentComponent } from './servicecomponent/servicecomponent.component';
+import { FakeService } from './fake-service';
+import { HttpClientModule } from '@angular/common/http';				*********************************************************************
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    TemplatedrivenformComponent,
+    ModeldrivenformComponent,
+    ServicecomponentComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule									*********************************************************************
+  ],
+  providers: [FakeService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+=================================================================================================================================================================================================
+Using Online Fake Dummy REST APPI
+http://dummy.restapiexample.com/
+http://dummy.restapiexample.com/api/v1/employees
+=================================================================================================================================================================================================
+
+Invoking Dummmy Service on button click and get data in Table format
+1. Get Data in Table Format (employeeRetrieve)
+2. Inside FakeService create 4 methods for (GET,POST,PUT,DELETE)
+Do DI for FakeService and FakeService done Di for HTTP
+
+1. C:\Users\training\Visual_Studio_Code_Workspace\AngularDemo\angular-forms-service
+>ng g c employeeretrieve
+CREATE src/app/employeeretrieve/employeeretrieve.component.html (31 bytes)
+CREATE src/app/employeeretrieve/employeeretrieve.component.spec.ts (698 bytes)
+CREATE src/app/employeeretrieve/employeeretrieve.component.ts (309 bytes)
+CREATE src/app/employeeretrieve/employeeretrieve.component.css (0 bytes)
+UPDATE src/app/app.module.ts (1130 bytes)
+
+C:\Users\training\Visual_Studio_Code_Workspace\AngularDemo\angular-forms-service
+>
+
+2. app.module.ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
+import { ModeldrivenformComponent } from './modeldrivenform/modeldrivenform.component';
+import { ServicecomponentComponent } from './servicecomponent/servicecomponent.component';
+import { FakeService } from './fake-service';
+import { HttpClientModule } from '@angular/common/http';
+import { EmployeeretrieveComponent } from './employeeretrieve/employeeretrieve.component';		*********************************************************************
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    TemplatedrivenformComponent,
+    ModeldrivenformComponent,
+    ServicecomponentComponent,
+    EmployeeretrieveComponent										*********************************************************************
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [FakeService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+3. employeeretrieve.component.html
+<div>
+	<input type="button" value="Load Data" (click)="loadData()">
+</div>
+
+4. employeeretrieve.component.ts
+import { Component, OnInit } from '@angular/core';
+import { FakeService } from '../fake-service';
+@Component({
+  selector: 'app-employeeretrieve',
+  templateUrl: './employeeretrieve.component.html',
+  styleUrls: ['./employeeretrieve.component.css']
+})
+export class EmployeeretrieveComponent implements OnInit {
+
+  constructor(private fakeservice:FakeService) { }
+
+  ngOnInit() {
+  }
+  
+  loadData() {
+   //   this.fakeservice.loadEmployeeInfoDisplayRecordInConsole();
+        this.fakeservice.loadEmployeeInfo();
+  }
+}
+
+
+5. fake-service.ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable()
+export class FakeService {
+
+	constructor(private http: HttpClient) {
+		// Using Constructor based DI
+	}
+
+	display(): string {
+		return "Welcome to Angular 8 Service Using DI";
+	}
+	
+	// Service must return some values
+	// Service always interacts with Component
+	/* 1. Displaying Records in console */
+	/*
+	loadEmployeeInfoDisplayRecordInConsole(): void {
+		// observable design pattern
+		// subscribe method will take 3 parameters which are called asynhronous call back methods
+		// Old way : Promise used to load. Promise is non cancellable you have to load  
+		// New way : Using subscribe
+		//1 parameter : to load data one by one
+		//2 if any error generated then it will be called
+		//3 if no error this parameter will be invoked
+		// all 3 are asynchronous call back functions
+		this.http.get("http://dummy.restapiexample.com/api/v1/employees").subscribe(
+			data  => console.log(data),
+			error => console.log(error),
+			() => console.log("completed")
+			);
+	}
+	*/
+	
+	/* 2. Returning Data from service to component*/
+	loadEmployeeInfo() {
+		
+	}
+}
+
+
+
+
+
+/*
+1. To make this class as a service class use annotation @Injectable()
+ */
+ 
+ // View --> Component --> Service --> Rest API
+ // Service --> Console Print
+=================================================================================================================================================================================================
+View --> Component --> Service(uses HTTPClient) --> REST API
+Create a model in front end side to store the json data
+Storing Array Objects
+
+http://dummy.restapiexample.com/api/v1/employees
+
+5. Create a new interface "fakeInterface.ts"
+
+export interface Fake {
+	id: number;
+	employee_name: string;
+	employee_salary: number;
+	employee_age: number;
+}
+=================================================================================================================================================================================================
+ng g c employeestore
+http://dummy.restapiexample.com/
+
+C:\Users\training\Visual_Studio_Code_Workspace\AngularDemo\angular-forms-service
+>ng g c employeestore
+CREATE src/app/employeestore/employeestore.component.html (28 bytes)
+CREATE src/app/employeestore/employeestore.component.spec.ts (677 bytes)
+CREATE src/app/employeestore/employeestore.component.ts (297 bytes)
+CREATE src/app/employeestore/employeestore.component.css (0 bytes)
+UPDATE src/app/app.module.ts (1240 bytes)
+
+C:\Users\training\Visual_Studio_Code_Workspace\AngularDemo\angular-forms-service
+>
+
+
+2. 
+=================================================================================================================================================================================================
