@@ -1,0 +1,940 @@
+1. Reactjs + Vuejs = ES 6,7,8
+2. Angularjs	= support all versions of ES 6,7,8..
+3. nodejs required for downloading libraries
+==========================================================================================================================================================================================================
+4. npm install -g typescript the check using "tsc"
+==========================================================================================================================================================================================================
+5. prerequisite for js is typescript
+6. Angualar 1.x (HTML/CSS/JS)
+7. Angular 2 to 8(2,4,5,6,7,8) no 3 (HTML/CSS/TS)
+8. Latest TypeScript version(3.7)
+9. OLD : without HTML we cannot run JS
+10. Currently : without Nodejs we cannot run JS
+11. jQuery(js library) -> Nodejs (its not an external lib its a runtime lib for running js program)
+12. Nodejs "express" module is used for developing servlet
+13. Node js is a run time environment for JavaScript Files(library or framework)
+14. MEAN Stack:MongoDb/MYSQL Express Module AngularJS Node JS
+15. MERN Stack:MongoDb/MYSQL Express Module ReactJS NodeJS
+16. Using NodeJS you can create your own server
+17. NodeJS is opensource. You can customize.
+18. JS is single threaded. JS uses "Event Driven Architecture"(How many request per time)
+19. JS uses callback functions.
+20. Using JS you cannot connect to DB but you can now connect using Nodejs
+21. NodeJs also has stream API.
+22. Currenlty : Simple JS program without HTML
+==========================================================================================================================================================================================================
+23. First Program
+
+Code: firstProgram.js
+console.log("Welcome to External JavaScript");
+
+
+O/P:
+C:\Users\training\Visual_Studio_Code_Workspace>node firstProgram.js
+Welcome to External JavaScript
+
+C:\Users\training\Visual_Studio_Code_Workspace>
+==========================================================================================================================================================================================================
+24. We do not require HTML for running js we require nodejs
+==========================================================================================================================================================================================================
+25. In ES6 we can declare the variable using var, let and const
+==========================================================================================================================================================================================================
+26. TypeScript is a superset of JavaScript which will support all features of ES6 or ES2015, ES7 or ES8. But browser does not support typescript, it requires transpiler() which helps to convert TS to JS i.e. TypeScript or Babel
+27. We use AngularJS Transpiler to convert TS -> JS (). Transpiler name itself is TypeScript.
+27. We use React Transpiler to convert TS -> JS (). Transpiler name itself is Babel. Babel is a JavaScript compiler.
+28. Install Transcript transpiler to convert TS -> JS
+==========================================================================================================================================================================================================
+29. Download:
+npm(node package manager): It helps to download external modules
+Syntax (if you want to install it globally)
+npm install -g moduleName
+Syntax (if you want to install it locally)
+npm install modulename
+==========================================================================================================================================================================================================
+30. npm comes inbuild with NodeJs
+31. tsc : TypeScript Compiler which converts TypeScript to JavaScript
+32. TS -> JS
+C:\Users\training\Visual_Studio_Code_Workspace>tsc firstTypeScriptProgram.ts
+
+C:\Users\training\Visual_Studio_Code_Workspace>node firstTypeScriptProgram.js
+Welcome to type Script. Save this file with .ts
+
+C:\Users\training\Visual_Studio_Code_Workspace>
+==========================================================================================================================================================================================================
+33. ES 6 let and const
+34. ES 5 JS use var
+let vs var
+35. Using var you can redclare varibales but not using let. Using let you cannot do declaration.
+36. Using var global scope and Using let local/block scope
+C:\Users\training\Visual_Studio_Code_Workspace>tsc thirdTypeScriptProgram.ts
+thirdTypeScriptProgram.ts:8:13 - error TS2304: Cannot find name 'j'.
+
+8 console.log(j);
+              ~
+
+
+Found 1 error.
+
+
+C:\Users\training\Visual_Studio_Code_Workspace>
+==========================================================================================================================================================================================================
+37. Maximum Browser support ES6
+38. DataTypes:
+1. number
+2. string
+3. boolean
+4. object
+5. any
+Syntax:
+let variableName:dataType
+let a:number=100;
+
+let a;
+let b:number;
+let c:number=30;
+let d:any;
+==========================================================================================================================================================================================================
+Eg:
+C:\Users\training\Visual_Studio_Code_Workspace>tsc TS5fifthTypeScriptProgram.ts
+TS5fifthTypeScriptProgram.ts:7:1 - error TS2322: Type '"Ravi"' is not assignable
+ to type 'number'.
+
+7 a="Ravi";
+  ~
+
+
+Found 1 error.
+
+
+C:\Users\training\Visual_Studio_Code_Workspace>
+==========================================================================================================================================================================================================
+Using var: you can reassign value in JS
+Using let: you cannot reassign value in TS
+const : is a constant similar to final in java
+==========================================================================================================================================================================================================
+Code:
+let a:number=10;
+let fname:string="Ravi";
+let result:boolean=true;
+console.log(a);
+console.log(fname);
+console.log(result);
+var x = 100;
+x = 20;
+console.log(a);
+
+C:\Users\training\Visual_Studio_Code_Workspace>tsc TS6TypeScriptProgram.ts
+
+C:\Users\training\Visual_Studio_Code_Workspace>node TS6TypeScriptProgram.js
+10
+Ravi
+true
+10
+==========================================================================================================================================================================================================
+Online TypeScript Editor (https://www.typescriptlang.org/play/?target=2&ssl=28&ssc=45&pln=21&pc=1#code/PQKgsAUANgpgLgAgIYCMDGAuBBBATrpATwB4A7AVwFsUZcA+BAXgQG0BGAGgQCYuBmLgBYuAVi4A2LgHYAugG5IAMwD2uBAApYiJAgCWpZOgCUCAN4JIkBNYRplpAM7LYAOijKA5up0BqBACJGILp-BD9UNBYkGSMFCABfJVUNLQQUBGVFQzQTcysbO0dnGDdPdRRYyESISGBgBDYEAGUYAAckAjgYBEVyUjQ4XXtICJcVXABRJDQAC3UAE10HSohe-sH7BEWHdV0MCmpaXPzrQqdXdy9-ADUkKHJupYxQv10jKtr67hdmpEputYDIakEboMaqKazdSAjYGXa5CwQGy2eznEqXeFxeLvCAgYBKPpAzYwSitACSpBUu3mWAONFwHBOPVIfxgWAccFw+g8jKRNgcdw6hFpVHpvKQHjZdNojG4fCM7M53LMiORuHg5FwBn8AHUYFA7P8AmFkJKsZ8zsVSl4SeTKcp1GwAAxOrj+AAK5AcMwA1h1-Fw2NwXU6jCtLRcyraKVTnZwAgAlVnegMNEQhjhhuRAA)
+==========================================================================================================================================================================================================
+Loops in TS:
+1. while
+2. do while
+3. for
+4. for in
+5. for of loop
+
+4. for in loop (get index position)
+for(let variablename in arrayName){
+
+}
+or
+for(var variablename in arrayName){
+
+}
+
+5. for of loop (get value directly)
+for(let variablename of arrayName){
+
+}
+// duplicate values will also come
+==========================================================================================================================================================================================================
+abc.forEach() // callback function will pass function as a parameter
+/ forEach takes function as a parameter
+==========================================================================================================================================================================================================
+Function Types in JS
+1. Normal Function : which takes more than one parameter
+Old JS way ES5 Eg:
+function empInfo(id,name,salary){
+
+}
+// order must not match
+// no. of parameter must not match
+// no return type 
+Old :
+function empInfo(id,name,salary){
+	return name;
+}
+// not mandatory to return 
+NEw TS way
+function empInfo(id:number, name:string, salary:number){
+
+}
+// order must match
+// no. of parameter must match
+New ES6:
+function empInfo(id:number, name:string, salary:number):void{
+	
+}
+// void return type
+==========================================================================================================================================================================================================
+1. Pass function name
+2. Pass function body
+3. Arrow function
+==========================================================================================================================================================================================================
+Default Initialization and Default Parameters cannot be used together.
+function empInfo(id: number,
+    fname: string,
+    salary: number,
+age:number=23): string { 
+    return "Welcome " + age;
+}
+//console.log(empInfo(100, "Pushkar", 12000));
+console.log(empInfo(101, "Ramesh", 15000,));
+==========================================================================================================================================================================================================
+1. REST Operator or Parameter:
+Rest Operator or Parameter variable help to receive 0 or 1 or more than one parameter as an argument. Like a var-args in java
+Eg:
+function functionName(...variableName:dataType[]){
+
+}
+In one function there can only be one rest operator and that rest operator must be the last operator
+
+Eg:
+function stdInfo(sid: number,
+    sname: string,
+    ...skill: string[]) { 
+
+}
+
+stdInfo(1, "Ravi");
+stdInfo(2, "Ramesh","C");
+stdInfo(2, "Kavita","C","C++","C#","Java");
+
+2. Spread Operator
+stdInfo(3,”Ramesh”,…skillInfo);
+
+3. Arrow Function:
+Syntax:
+// If one statement
+let functionName=(parameterList)=> function body
+var functionName=(parameterList)=> function body
+// If more than one statements
+let functionName=(parameterList)=> {function body}
+var functionName=(parameterList)=> {function body}
+
+Eg: Without any argument
+
+function fun1() { 
+    console.log("fun1()");
+}
+fun1();
+let fun2 = () => console.log("fun1()");
+fun2();
+
+Eg: With arguments
+
+function addNumber(a:number, b:number){
+	return a+b;
+}
+console.log(addNumber(10,20));
+
+let addNumber1 = (a:number, b:number) => a+b;
+console.log(addNumber1(10,20));
+
+Eg:
+
+numData.forEach((val) => { 
+    if (val > 5)
+    console.log(val);
+});
+
+
+let addNumber1 = (a:any, b:any) => { 
+    if (true) { 
+        return a + b;
+    }
+}
+
+* we do not need to mention return type in anonymous function
+==========================================================================================================================================================================================================
+OOPS concepts using TypeScript
+==========================================================================================================================================================================================================
+1. Class (ES5 vs ES6)
+OLD : ES 5:
+- No class keyword provided
+- user defined objects are written in capital
+ function Person(){
+	this.pid = 100;
+	this.pname = "Ravi";
+	this.disInfo=funcion(){
+		console.log("PID:" + this.pid + "PName" + this.pname);
+	}
+}
+
+//Person();
+let p1 = new Person();
+p1.disInfo();
+OLD:
+
+C:\Users\training\Visual_Studio_Code_Workspace>tsc TS8Function.ts
+
+C:\Users\training\Visual_Studio_Code_Workspace>node TS8Function.js
+PID: 100 PName Ravi
+
+New : ES 6
+- class keyword is used
+
+class Person{
+	disInfo(): void {
+		console.log("person function");
+	}
+
+}
+
+let p1 = new Person();
+p1.disInfo();
+
+C:\Users\training\Visual_Studio_Code_Workspace>tsc TS8FunctionUsingES5.ts
+
+C:\Users\training\Visual_Studio_Code_Workspace>node TS8FunctionUsingES5.js
+PID: 100 PName Ravi
+
+C:\Users\training\Visual_Studio_Code_Workspace>tsc TS9FunctionUsingES6.ts
+
+C:\Users\training\Visual_Studio_Code_Workspace>node TS9FunctionUsingES6.js
+PID: 100 PName Ravi
+
+C:\Users\training\Visual_Studio_Code_Workspace>
+
+2. Constructor
+class Person{
+    constructor() { 
+        console.log("object created")
+    }
+	disInfo(): void {
+		console.log("person function");
+	}
+
+}
+
+let p1 = new Person();
+p1.disInfo();
+
+class Person{
+    pid: number = 0;
+    constructor() { 
+        //this.pid = 0;
+        console.log("object created")
+    }
+	disInfo(): void {
+		console.log("person function");
+	}
+
+}
+
+let p1 = new Person();
+p1.disInfo();
+
+*transpiler is looking for all the tags and keywords in TypeScript
+
+2.1 Parameterized Constructor
+class Person{
+    pId: number = 0;
+    pName: string = "";
+    constructor(pid:number,pName:string) { 
+        this.pId = 1;
+        this.pName = "Pushkar";
+        console.log("object created");
+    }
+	disInfo(): void {
+        console.log("person function");
+        console.log("PID:" + this.pId);
+        console.log("PName:" + this.pName);
+	}
+
+}
+
+let p1 = new Person(100,"Ravi");
+p1.disInfo();
+
+*TypeScript do not support constructor overloading (i.e. may be empty or parameterized)
+
+3. Access Specifier with public
+class Person{
+//   pId: number = 0;
+//  pName: string = "";
+    constructor(public pId:number,public pName:string) { 
+        this.pId = 1;
+        this.pName = "Pushkar";
+        console.log("object created");
+    }
+	disInfo(): void {
+        console.log("person function");
+        console.log("PID:" + this.pId);
+        console.log("PName:" + this.pName);
+	}
+
+}
+
+let p1 = new Person(100, "Ravi");
+p1.disInfo();
+let p2 = new Person(1000, "Shankar");
+p2.disInfo();
+
+3.2 Access Specifier with Private
+class Person{
+//   pId: number = 0;
+//  pName: string = "";
+    constructor(public pId:number,private pName:string) { 
+        this.pId = 1;
+        this.pName = "Pushkar";
+        console.log("object created");
+    }
+	disInfo(): void {
+        console.log("person function");
+        console.log("PID:" + this.pId);
+        console.log("PName:" + this.pName);
+	}
+
+}
+
+let p1 = new Person(100, "Ravi");
+p1.disInfo();
+console.log(p1.pId);
+console.log(p1.pName);
+
+* Best Practise is class should contain one constructor with all variables in TypeScript
+* as an object we can pass null, but not as an attribute
+
+4. Encapsulation
+-- providing setter and getter method to achieve encapsulation
+-- C++ private scope
+-- Java default scope
+-- TypeScript public scope
+-- provide helper methods
+-- all instance variable declared with under_score
+Setter and Getter
+
+// Pure Encapsulation Class
+class Employee { 
+    constructor(private _empId: number,
+        private _fName: string,
+        private _salary: number) { }
+
+    set empId(empId: number){ 
+            this._empId = empId;
+    }
+
+    get empId(): number { 
+        return this._empId;
+    }
+    
+}
+
+let emp1 = new Employee(100, "Ravi", 12000);
+emp1.empId = 200;
+console.log(emp1.empId);
+==========================================================================================================================================================================================================
+class Employee { 
+    constructor(private _empId: number,
+        private _fName: string,
+        private _salary: number) { }
+
+    set empId(empId: number){ 
+            this._empId = empId;
+    }
+
+    get empId(): number { 
+        return this._empId;
+    }
+
+    set fName(fName: string) { 
+            this._fName = fName;
+    }
+
+    get fName(): string { 
+        return this._fName;
+    }
+    set salary(empSalary: number){ 
+            this._salary = empSalary;
+    }
+
+    get salary(): number { 
+        return this._salary;
+    }
+    
+}
+
+let emp1 = new Employee(100, "Ravi", 12000);
+emp1.empId = 200;
+emp1.salary = 1000;
+emp1.fName = "Amit";
+console.log(emp1.empId);
+console.log(emp1.fName);
+console.log(emp1.salary);
+==========================================================================================================================================================================================================
+tsconfig.json: TypeScript configuration file must be declared
+
+C:\Users\training\Visual_Studio_Code_Workspace>tsc --init
+message TS6071: Successfully created a tsconfig.json file.
+
+*** tsconfig.json file will automatically convert all ts files into js files 
+
+C:\Users\training\Visual_Studio_Code_Workspace>tsc
+
+C:\Users\training\Visual_Studio_Code_Workspace>tsc TS010Employee.ts --target es2015
+
+C:\Users\training\Visual_Studio_Code_Workspace>node TS010Employee.js
+200
+Amit
+1000
+
+C:\Users\training\Visual_Studio_Code_Workspace>
+==========================================================================================================================================================================================================
+5. Inheritance
+- Single Inheritance
+- Multilevel
+- Hierarchical
+
+TypeScript does not support multiple inheritance
+It supports interfaces
+
+5.1
+class Employee{
+	dis1():void{
+		console.log("dis2() - Employee Method");
+	}
+}
+class Manager extends Employee{
+	dis2():void{
+		console.log("dis2() - Manager Method");
+	}
+}
+
+let m1 = new Manager();
+m1.dis1();
+m1.dis2();
+
+
+5.2 Using Property
+class Employee{
+    constructor(private empId: number,
+        private empName: string,
+        private empSalary: number) { }
+	dis1():void{
+		console.log("dis2() - Employee Method");
+	}
+}
+class Manager extends Employee{
+    constructor(empId: number,
+        empName: string,
+        empSalary: number,
+        private numberOfEmp: number) { 
+        super(empId,empName,empSalary);
+        }
+	dis2():void{
+		console.log("dis2() - Manager Method");
+	}
+}
+
+let m1 = new Manager(1,"Ravi",16000,15);
+m1.dis1();
+m1.dis2();
+
+5.3 
+class Employee{
+    constructor(private empId: number,
+        private empName: string,
+        private empSalary: number) { }
+    dis1(): void{
+        console.log("empId:" + this.empId);
+        console.log("empName:" + this.empName)
+        console.log("empSalary:"+this.empSalary);
+		console.log("dis2() - Employee Method");
+	}
+}
+class Manager extends Employee{
+    constructor(empId: number,
+        empName: string,
+        empSalary: number,
+        private numberOfEmp: number) { 
+        super(empId,empName,empSalary);
+        }
+    dis2(): void{
+        console.log(this.numberOfEmp);
+		console.log("dis2() - Manager Method");
+	}
+}
+
+let m1 = new Manager(1,"Ravi",16000,15);
+m1.dis1();
+m1.dis2();
+==========================================================================================================================================================================================================
+CRUD Operation : API communicating with database
+RESTful services
+
+*** you cannot create constructor overloading
+==========================================================================================================================================================================================================
+5.4 Function Overriding using Single Inheritance
+class Bike{
+	speed():void{
+		console.log("60km/hr");
+	}
+}
+class Pulsar extends Bike{
+        speed():void{
+		console.log("90km/hr");
+	}
+	color():void{
+		console.log("Black");
+	}
+}
+let pu = new Pulsar();
+pu.color();
+pu.speed();
+==========================================================================================================================================================================================================
+5.5 Writing method without body using abstract
+
+class Bike{
+	abstract speed():void;
+    
+}
+class Pulsar extends Bike{
+    speed():void{
+		console.log("90km/hr");
+    }
+    color():void{
+		console.log("Black");
+	}
+}
+let pu = new Pulsar();
+pu.color();
+pu.speed();
+
+** abstract class can have non abstract methods as well.
+==========================================================================================================================================================================================================
+5.6 Interface (contain abstract method and not marked as abstract)
+
+all public static final 
+all public abstract methods
+
+*** do not initialize constants in interfaces as a good practise
+*** default value is not provided in interfaces
+*** 
+1. one interface will hold only variables 
+2. one interface will hold only methods
+3. we should not use both variables and methods in an interface
+
+interface Abc{
+	empId: number;
+	dis1():void;
+}
+
+// implement all variables and method 
+class Xyz implements Abc{
+	empId: number = 10;
+	dis1():void{
+		
+	}
+}
+
+
+
+
+interface Abc{
+	empId: number;
+	dis1():void;
+}
+
+// implement all variables and method 
+class Xyz implements Abc{
+	empId: number = 10;
+	dis1():void{
+        console.log("dis1 called..." + this.empId);
+	}
+}
+let xyz = new Xyz();
+xyz.dis1();
+==========================================================================================================================================================================================================
+5.7 Creating Object Using Object Literal (no constructor is required)
+
+let emp1 = {
+	"id":100,
+	"name":"Ravi",
+	"salary":12000,
+	"address":{
+		"city":"Bangalore"
+	},
+	"SkillSet":
+		["C","C++","Java"]
+};
+console.log("id: " + emp1.id + " name: " + emp1.name + " salary: "+ emp1.salary));
+console.log("city: " + emp1.address.city);
+console.log("skillset: " + emp1.SkillSet[0]);
+
+
+
+5.7.1 Using Interface with Object Literal (Mapping model data)
+
+interface EmpInfo { 
+    id: number;
+    name: string;
+    salary: number;
+}
+
+let emp1 = {
+	"id":100,
+	"name":"Ravi",
+	"salary":12000,
+	"address":{
+		"city":"Bangalore"
+	},
+	"SkillSet":
+		["C","C++","Java"]
+};
+console.log("id: " + emp1.id + " name: " + emp1.name + " salary: "+ emp1.salary));
+console.log("city: " + emp1.address.city);
+console.log("skillset: " + emp1.SkillSet[0]);
+
+let emp2: EmpInfo = {
+	"id":101,
+	"name": "Ramesh",
+    	"salary":12000
+};
+
+
+
+5.7.2 Using Interface with ?: or default values of age in interface
+interface EmpInfo { 
+    id: number;
+    name: string;
+    salary: number;
+    age?: number;
+}
+
+let emp1 = {
+	"id":100,
+	"name":"Ravi",
+	"salary":12000,
+	"address":{
+		"city":"Bangalore"
+	},
+	"SkillSet":
+		["C","C++","Java"]
+};
+console.log("id: " + emp1.id + " name: " + emp1.name + " salary: "+ emp1.salary));
+console.log("city: " + emp1.address.city);
+console.log("skillset: " + emp1.SkillSet[0]);
+
+let emp2: EmpInfo = {
+	"id":101,
+    "name": "Ramesh",
+    "salary":12000
+};
+
+let emp3: EmpInfo = {
+	"id":102,
+    "name": "Ajay",
+    "salary": 18000,
+    "age":23
+};
+
+==========================================================================================================================================================================================================
+String template: 
+(if we have a multi line string we can split it use other variables inside other variables using ${tname})
+(back ticks are used for dynamically displaying values)
+
+//let info1: string = "ABCDEF"+
+//"GHI"
+
+let info1: string =
+`WELCOME
+TO
+ANGULAR 8 
+TRAINING
+AT ITC INFOTECH`
+
+console.log(info1);
+
+let tname: string = "Akash Kale"
+
+let info2: string =
+`WELCOME
+TO
+ANGULAR 8 
+TRAINING
+AT ITC INFOTECH
+by ${tname}`
+
+console.log(info2);
+
+*** EL Language outside scriptlet tags
+==========================================================================================================================================================================================================
+6. Module 
+-- Module is a collection of variable, function, classes as well as interfaces
+-- Module is similar to a package in java or a namespace in C++
+
+==========================================================================================================================================================================================================
+VS Code:
+==========================================================================================================================================================================================================
+Example 1: Simple program using export with different function names
+1. a.ts
+export function dis1() {
+	console.log("dis1() function of a.ts file");
+}
+
+2. b.ts
+export function dis2() {
+	console.log("dis2() function of b.ts file");
+}
+
+3. main.ts
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var a_1 = require("./a");
+var b_1 = require("./b");
+a_1.dis1();
+b_1.dis2();
+
+
+C:\Users\training\Visual_Studio_Code_Workspace\TypeScript_Modules>tsc --init
+message TS6071: Successfully created a tsconfig.json file.
+
+C:\Users\training\Visual_Studio_Code_Workspace\TypeScript_Modules>tsc
+
+C:\Users\training\Visual_Studio_Code_Workspace\TypeScript_Modules>node main.js
+dis1() function of a.ts file
+dis2() function of b.ts file
+
+C:\Users\training\Visual_Studio_Code_Workspace\TypeScript_Modules>
+
+==========================================================================================================================================================================================================
+Example 2: Simple program using export with same function names
+1. a.ts
+export function dis1() {
+	console.log("dis1() function of a.ts file");
+}
+export function display(){
+	console.log("display() function in a.ts file");
+}
+
+2. b.ts
+export function dis2() {
+	console.log("dis2() function of b.ts file");
+}
+export function display(){
+	console.log("display() function in b.ts file");
+}
+
+3. main.ts
+import {dis1,display as obj2} from './a';
+import {dis2, display as obj1} from './b';
+dis1();
+dis2();
+obj1();
+obj2();
+
+
+C:\Users\training\Visual_Studio_Code_Workspace\TypeScript_Modules>tsc
+
+C:\Users\training\Visual_Studio_Code_Workspace\TypeScript_Modules>node main.js
+dis1() function of a.ts file
+dis2() function of b.ts file
+display() function in b.ts file
+display() function in a.ts file
+
+C:\Users\training\Visual_Studio_Code_Workspace\TypeScript_Modules>
+==========================================================================================================================================================================================================
+Example 3:
+
+1. a.ts
+export function dis1() {
+	console.log("dis1() function of a.ts file");
+}
+export function display(){
+	console.log("display() function in a.ts file");
+}
+
+2. b.ts
+export function dis2() {
+	console.log("dis2() function of b.ts file");
+}
+export function display(){
+	console.log("display() function in b.ts file");
+}
+3. c.ts
+export function display1(){
+	console.log("display1() function");
+}
+export function display2(){
+	console.log("display2() function");
+}
+export function display3(){
+	console.log("display3() function");
+}
+export let a = 10;
+
+export class Employee{
+	dis():void{
+		console.log("Employee dis() function");
+	}
+}
+4. main.ts
+import {dis1,display as obj2} from './a';
+import {dis2, display as obj1} from './b';
+import * as obj from './c';
+dis1();
+dis2();
+obj1();
+obj2();
+obj.display1();
+obj.display2();
+obj.display3();
+console.log(obj.a);
+let emp = new obj.Employee();
+emp.dis();
+
+Running:
+C:\Users\training\Visual_Studio_Code_Workspace\TypeScript_Modules>tsc
+
+C:\Users\training\Visual_Studio_Code_Workspace\TypeScript_Modules>node main.js
+dis1() function of a.ts file
+dis2() function of b.ts file
+display() function in b.ts file
+display() function in a.ts file
+display1() function
+display2() function
+display3() function
+10
+Employee dis() function
+
+C:\Users\training\Visual_Studio_Code_Workspace\TypeScript_Modules>
+
+==========================================================================================================================================================================================================
+Decorator:
+-- Decorator is a sepcial function which provides meta-data about the class, property or constructor.
+-- Decorator is like an annotation in Java
+-- Meta data is data sbout data.
+-- Syntax:
+@DecoratorName({
+	// Set of property
+})
+==========================================================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
