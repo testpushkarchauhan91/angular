@@ -1,0 +1,130 @@
+Component Communication
+==========================================================================================================================================================================================================
+Parent
+Child
+Sibling
+
+AppComponent
+Header <--> Footer sibling
+
+Share values between Parent to Child Component Template
+Share component values between Parent to Child
+Share component values between Child to Parent
+Share component values between Sibling to Sibling
+
+Concept 1: Passing the value from Parent to Child Component
+-- if you use other component as selector
+-- "@Input" decorator is responsible to receive value from parent to child component.
+-- @Input decoartor will be used in Child or @Input decorator should be inside Child component
+
+Concept 2: Passing the value from Child to Parent Component
+-- 1 Way: "@ViewChild()" decorator is responsible to access the child component Property and Behaviour
+-- 2 Way: "@Output" decorator is responsible to pass value from child to parent using EventEmitter() API
+-- @Output decorator will be used in Parent or @Output decorator should be inside Parent component
+
+Scope of Variable declared in child is limited to that class
+==========================================================================================================================================================================================================
+Concept 1:
+1. Create a new Project for component communication : ng new component-communication
+2. Create a new Child Component : ng g c child1
+3. app.component.html
+<div>
+  <h2>Parent Component</h2>
+  <hr>
+  <app-child1></app-child1>
+</div>
+4. At Runtime Parent will add value and Child will displaying
+==========================================================================================================================================================================================================
+app.component.html (making bridge between parent and child)
+<app-child1 [parentName]="name" [stdParentNames]="stdName"></app-child1>
+==========================================================================================================================================================================================================
+Concept 1
+Only eligible to receive the value
+@Input()
+  stdParentNames: Array<string>;
+ 
+Brdige:
+<app-child1 [parentName]="name" [stdParentNames]="stdName"></app-child1>
+
+
+Concept 2: C to P using @ViewChild
+C:
+ messageInChild: string = "This is a child component Message";// retrive Child string in Parent
+P:
+-- creating a reference
+ @ViewChild(Child1Component, null) // used in Angular 8 
+ childRef: Child1Component;
+
+-- using lifecycle method
+ngOnInit(){
+    this.messageFromChild = this.childRef.messageInChild;
+  }
+==========================================================================================================================================================================================================
+
+Child TO Parent
+Using EventEmitter
+1. 
+ @Output()
+ eventRef = new EventEmitter<number>();
+1.1 Using LifeCycle Method init
+1.2 Using Event
+==========================================================================================================================================================================================================
+Routing
+-- Navigate from one component to another with or without condition 
+-- SPA app
+-- Routing is used to navigate from one component's template t another Component's template with or without conditions using path specified in Routing modules
+-- 4 modules:
+ng new angular-routing-demo
+ng g c about-us
+ng g c contact-us
+ng g c login
+ng g c dashboard
+
+1. app.component.html
+-- component is loaded based on path
+-- static content which we want common in all pages
+
+2. app.routing.module.ts
+-- Rules are written in separtely written in this file
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { AboutUsComponent } from './about-us/about-us.component';			****************************************************************
+
+// Empty Array routes which contains some rules
+const routes: Routes = [								****************************************************************
+
+  {
+    // aboutUs
+    path: "aboutUs",
+    component: AboutUsComponent
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+3. Create a service class with Injectavble decorator
+4. Do DI if that attribute is available 
+C -> Service -> Import HTTPClient moduls
+http://dummy.restapiexample.com/api/v1/employee/1 ==> http://dummy.restapiexample.com/
+
+5 We need to list allservice in providers otherwise use @Injectable
+
+==========================================================================================================================================================================================================
+JWT: Json Web Token
+-- Any one can directly access the home page like  localhost:8080/home he can access the dashboard but we want to prevent it so we use a JWT token across all pages."Auth Guard" is used to prevent this
+-- Unique Id is generated using some algorithm before we were using sessionId
+-- response will contain a ID and js has session storage and has session.setAttribute(K,V)
+-- need to keep the sessionAttribute or JWT
+-- otherwise client authentication must be provided. unique JWT token is generated,
+-- employee id is considering as jwt token
+-- Auth Guard is used to prevent this
+-- Auth Guard: Auth Guard provides a set of interfaces which help to validate JWT(Json Web Token) or unique ID before navigating to dashboard or home page of application
+-- Backend will send life time for which session will remain active
+
+Auth Guard
+
+==========================================================================================================================================================================================================
